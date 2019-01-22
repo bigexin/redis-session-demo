@@ -1,0 +1,12 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: service-b
+  redis:
+    host: localhost
+    port: 6379
+eureka:
+  client:
+    service-url:
+      defaultZone: http://10.10.1.11:8761/eureka

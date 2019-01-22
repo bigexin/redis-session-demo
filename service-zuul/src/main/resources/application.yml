@@ -1,0 +1,22 @@
+server:
+  port: 1100
+spring:
+  application:
+    name: service-zuul
+zuul:
+  host:
+    connect-timeout-millis: 200000
+    socket-timeout-millis: 200000
+  routes:
+    service-a:
+      path: /a/**
+      serviceId: service-a
+      sensitiveHeaders: "*"
+    service-b:
+      path: /b/**
+      serviceId: service-b
+      sensitiveHeaders: "*"
+eureka:
+  client:
+    service-url:
+      defaultZone: http://10.10.1.11:8761/eureka/
